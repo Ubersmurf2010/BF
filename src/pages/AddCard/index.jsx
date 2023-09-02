@@ -4,14 +4,14 @@ import Paper from "@mui/material/Paper";
 import Button from "@mui/material/Button";
 import SimpleMDE from "react-simplemde-editor"; //библиотека для создания редактора
 import "easymde/dist/easymde.min.css";
-import styles from "./AddPost.module.scss";
 import { useSelector } from "react-redux";
 import { selectIsAuth } from "../../redux/slices/auth";
 import { useNavigate, Navigate, useParams } from "react-router-dom";
 import axios from "../../axios";
 
+import styles from "./AddCard.module.scss";
 
-export const AddPost = () => {
+export const AddCard = () => {
   const { id } = useParams();
   const [text, setText] = React.useState("");
   const [imageUrl, setImageUrl] = React.useState("");
@@ -54,31 +54,30 @@ export const AddPost = () => {
       const fields = {
         title,
         imageUrl,
-        tags,
         text
       };
 
       const { data } = isEditing
-      ? await axios.patch(`/posts/${id}`, fields)
-      : await axios.post('/posts', fields);
+      ? await axios.patch(`/cards/${id}`, fields)
+      : await axios.post('/cards', fields);
+
 
       const _id = isEditing ? id : data._id;
 
-      navigate(`/posts/${_id}`);
+      navigate(`/cards/${_id}`);
 
     } catch(err) {
       console.warn(err);
-      alert("Ошибка при создании статьи");
+      alert("Ошибка при создании товара");
     }
   };
 
   React.useEffect(() => {
     if (id) {
-      axios.get(`/posts/${id}`).then(({ data }) => {
+      axios.get(`/cards/${id}`).then(({ data }) => {
         setTitle(data.title);
         setText(data.text);
         setImageUrl(data.imageUrl);
-        setTags(data.tags.join(','));
       }).catch( err => {
         console.warn(err);
         alert();
@@ -102,17 +101,15 @@ export const AddPost = () => {
     []
   );
 
-  console.log(tags, title, text);
-
 
   if (!window.localStorage.getItem('token') && !isAuth) {
-    return <Navigate to="/" />;
+    return <Navigate to="/shop" />;
   }
 
   return (
     <Paper style={{ padding: 30 }}>
       <Button onClick={() => inputFileRef.current.click()} variant="outlined" size="large">
-        Загрузить превью
+        Загрузить карточку товара
       </Button>
       <input
         ref={inputFileRef}
@@ -131,21 +128,12 @@ export const AddPost = () => {
 
       <br />
       <br />
-      
       <TextField
         classes={{ root: styles.title }}
         variant="standard"
-        placeholder="Заголовок статьи..."
+        placeholder="Название товара"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
-        fullWidth
-      />
-      <TextField
-        classes={{ root: styles.tags }}
-        variant="standard"
-        placeholder="Тэги"
-        value={tags}
-        onChange={(e) => setTags(e.target.value)}
         fullWidth
       />
       <SimpleMDE
