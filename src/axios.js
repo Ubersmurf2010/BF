@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const instance = axios.create({
-    baseURL: procces.env.REACT_APP_API_URL,
+    baseURL: "https://bb-gamma-three.vercel.app",
 });
 
 //функция посредник, которая при каждом запросе проверяет авторизацию по токену
