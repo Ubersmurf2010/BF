@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const instance = axios.create({
-    baseURL: 'http://localhost:4444',
+    baseURL: procces.env.REACT_APP_API_URL,
 });
 
 //функция посредник, которая при каждом запросе проверяет авторизацию по токену
