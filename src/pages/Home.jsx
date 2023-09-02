@@ -119,7 +119,7 @@ and scrambled it to make a type specimen book.
             <Post
               id={obj._id}
               title={obj.title}
-              imageUrl={obj.imageUrl ? `${procces.env.REACT_APP_API_URL}${obj.imageUrl}` : ''}
+              imageUrl={obj.imageUrl ? `https://bb-gamma-three.vercel.app${obj.imageUrl}` : ''}
               user={obj.user}
               createdAt={obj.createdAt}
               viewsCount={obj.viewsCount}

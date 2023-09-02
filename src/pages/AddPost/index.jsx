@@ -125,7 +125,7 @@ export const AddPost = () => {
           <Button variant="contained" color="error" onClick={onClickRemoveImage}>
             Удалить
          </Button>
-        <img className = {styles.image} src={`REACT_APP_API_URL${imageUrl}`} alt="Uploaded" />
+        <img className = {styles.image} src={`https://bb-gamma-three.vercel.app${imageUrl}`} alt="Uploaded" />
         </>
       )}
 
