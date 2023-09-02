@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const instance = axios.create({
-    baseURL: 'https://ubersmurf-note.vercel.app',
+    baseURL: 'https://ubersmurf-notes.vercel.app',
 });
 
 //функция посредник, которая при каждом запросе проверяет авторизацию по токену
