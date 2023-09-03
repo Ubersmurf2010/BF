@@ -34,7 +34,8 @@ export const AddPost = () => {
       console.log(data);
  
     } catch(err) {
-      console.warn(err);
+      console.log(data);
+      console.log(err);
       alert('Ошибка при загрузке файла');
     }
   };
