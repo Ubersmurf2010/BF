@@ -41,7 +41,7 @@ export const ShopVitrin = () => {
                 <Card
                 id={cardObj._id}
                 title={cardObj.title}
-                imageUrl={cardObj.imageUrl ? `http://localhost:4444${cardObj.imageUrl}` : ''}
+                imageUrl={cardObj.imageUrl ? `http://bb-gamma-three.vercel.app${cardObj.imageUrl}` : ''}
                 user={cardObj.user}
                 createdAt={cardObj.createdAt}
                 isEditable={userData ?._id === cardObj.user._id}
