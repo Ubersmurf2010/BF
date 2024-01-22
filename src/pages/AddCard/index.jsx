@@ -122,7 +122,7 @@ export const AddCard = () => {
           <Button variant="contained" color="error" onClick={onClickRemoveImage}>
             Удалить
          </Button>
-        <img className = {styles.image} src={`'http://localhost:4444'${imageUrl}`} alt="Uploaded" />
+        <img className = {styles.image} src={`'http://bb-gamma-three.vercel.app'${imageUrl}`} alt="Uploaded" />
         </>
       )}
 
