@@ -117,6 +117,7 @@ export const AddPost = () => {
       <input
         ref={inputFileRef}
         type="file"
+        name="imag"
         onChange={handleChangeFile}
         hidden
       />
@@ -125,7 +126,7 @@ export const AddPost = () => {
           <Button variant="contained" color="error" onClick={onClickRemoveImage}>
             Удалить
          </Button>
-        <img className = {styles.image} src={`https://bb-gamma-three.vercel.app${imageUrl}`} alt="Uploaded" />
+        <img className = {styles.image} src={`http://localhost:4444${imageUrl}`} alt="Uploaded" />
         </>
       )}
 

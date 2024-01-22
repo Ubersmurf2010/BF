@@ -34,7 +34,7 @@ export const Product = () => {
       <Card
         id={data._id}
         title={data.title}
-        imageUrl={data.imageUrl ? `https://bb-gamma-three.vercel.app${data.imageUrl}` : ''}
+        imageUrl={data.imageUrl ? `http://localhost:4444${data.imageUrl}` : ''}
         user={data.user}
         createdAt={data.createdAt}
         isFullCard

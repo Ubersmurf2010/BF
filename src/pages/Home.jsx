@@ -119,7 +119,7 @@ and scrambled it to make a type specimen book.
             <Post
               id={obj._id}
               title={obj.title}
-              imageUrl={obj.imageUrl ? `https://bb-gamma-three.vercel.app${obj.imageUrl}` : ''}
+              imageUrl={obj.imageUrl ? `http://localhost:4444${obj.imageUrl}` : ''}
               user={obj.user}
               createdAt={obj.createdAt}
               viewsCount={obj.viewsCount}
