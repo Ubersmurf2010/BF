@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const instance = axios.create({
-    baseURL: "http://bb-gamma-three.vercel.app",
+    baseURL: "https://bb-gamma-three.vercel.app",
     //baseURL: 'http://localhost:4444',
 });
 
